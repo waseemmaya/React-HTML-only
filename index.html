@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React HTML</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="root"></div>
+
+
+  <script type="text/babel">
+    
+  class App extends React.Component {
+    state = {
+        name: "Waseem",
+        num: 0
+    }
+
+   
+  incre = () => {
+        if (this.state.num >= 10) {
+         
+        } else {
+          this.setState({
+            num: ++this.state.num
+          });
+        }
+      };
+
+  decre = () => {
+        if (this.state.num <= 0) {
+         return false;
+        } else {
+          this.setState({
+            num: --this.state.num
+          });
+        }
+      };
+
+ checkQty = () => {
+       const { num } = this.state;  
+       return num === 0 ? "Zero" :num ;
+    }
+
+
+  render() {
+
+let spanClasses = "badge badge-";
+spanClasses += this.state.num === 0 ? "warning m-3" : "primary m-3";
+
+    return (
+      <div className="container">
+        
+        <button onClick={this.incre} className="btn btn-secondary m-3" style={{fontSize: 25}}><h3 className="display-6">Increment</h3></button>
+        <h1 className="display-5"><span className={spanClasses}>{this.checkQty()}</span></h1> 
+        <button onClick={this.decre} className="btn btn-secondary m-3" style={{fontSize: 25}}><h3 className="display-6">Decrement</h3></button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+    </script>
+</body>
+
+</html>
