@@ -60,9 +60,9 @@ spanClasses += this.state.num === 0 ? "warning m-3" : "primary m-3";
     return (
       <div className="container">
         
-        <button onClick={this.incre} className="btn btn-secondary m-3" style={{fontSize: 25}}><h3 className="display-6">Increment</h3></button>
+        <button onClick={this.incre} className="btn btn-dark m-3" style={{fontSize: 25}}><h3 className="display-6">Increment</h3></button>
         <h1 className="display-5"><span className={spanClasses}>{this.checkQty()}</span></h1> 
-        <button onClick={this.decre} className="btn btn-secondary m-3" style={{fontSize: 25}}><h3 className="display-6">Decrement</h3></button>
+        <button onClick={this.decre} className="btn btn-dark m-3" style={{fontSize: 25}}><h3 className="display-6">Decrement</h3></button>
       </div>
     );
   }
